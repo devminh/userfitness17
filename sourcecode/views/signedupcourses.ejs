@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+
+<div class="center">
+
+<p>Nếu bạn không thấy lớp bạn đang học , có thể nó đã bị xóa.Xem chi tiết <a style="color:blue" href="/deletedcourselist">tại đây !</a> </p>
+
+
+
+<div class="two-cols">
+
+
+<% for(var i=0; i< courselist.length; i++) { %>
+
+
+  <div class="a-course">
+    <img src="<%=  courselist[i].courseinfo.courseimg %>" alt="" style="width:100%;height:auto">
+    <div class="">
+      <h3> Bộ môn: <%= courselist[i].courseinfo.subject %> </h3>
+      <p>Tên khóa học: <a style="color:blue" href="/showcoursedetail/<%= courselist[i].courseid %>"><%= courselist[i].courseinfo.coursename %></a>  </p>
+
+
+
+      <p>Coach :   <a style="color:blue" href="/coachinfo/<%= courselist[i].courseinfo.coachemail %>"><%= courselist[i].courseinfo.coachname %></a> </p>
+      <p><%= courselist[i].courseinfo.description %> </p>
+
+      <% if(courselist[i].condition == "stop") { %>
+        <p style="font-weight:bold">Khóa học đã kết thúc vào ngày <%= courselist[i].ngayketthuckhoahoc %>  </p>
+      <% }%>
+
+      <% if(courselist[i].verify =="false") { %>
+        <p style="font-weight:bold">Đợi xác nhận thanh toán cho <%= courselist[i].sothanggiahan %> tháng - <%= courselist[i].bill %> VNĐ </p>
+      <% }%>
+
+      <% if(courselist[i].condition == "pause" && courselist[i].verify == "true") { %>
+        <p style="font-weight:bold">Đã đến lúc bạn đóng học phí mới !</p>
+        <button type="button"   class="btn btn-success" name="button"><a href="/giahankhoahoc/<%= courselist[i].courseid %>" style="color:white">Gia hạn khóa học </a> </button>
+
+      <% }%>
+
+        <% if(courselist[i].condition == "run" && courselist[i].verify == "true") { %>
+      <button type="button"  class="btn btn-success" name="button"><a href="/coursetimetable/<%= courselist[i].courseid %>" style="color:white">Lịch tập & Điểm danh </a> </button>
+      <% }%>
+
+      <button type="button"  class="btn btn-warning" name="button"><a href="/thanhtichbycourse/<%= courselist[i].courseid %>" style="color:white">Xem thành tích </a> </button>
+      <br><br>
+      <button type="button"  class="btn btn-primary" name="button"><a href="/gopy/<%= courselist[i].courseid %>" style="color:white"> Góp ý khóa học ! </a> </button>
+      <button type="button"  class="btn btn-danger" name="button"><a href="/rutlui/<%= courselist[i].courseid %>" style="color:white">Rút lui khóa học ! </a> </button>
+
+
+      <br><br>
+    </div>
+
+
+     </div>
+
+
+<%   }
+
+%>
+
+
+</div>
+
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="TopGym Template">
+    <meta name="keywords" content="TopGym, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness17</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,700,900" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Css Styles -->
+      <link rel="stylesheet" href="../style/main_style.css">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-menu">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="../img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <nav class="mobile-menu">
+                            <ul>
+                                <li><a href="/">Trang chủ</a></li>
+                                <li><a href="/showcourses">Các khóa học</a></li>
+                                <li><a href="/bloglist">Blog</a></li>
+                                <li><a href="/aboutus">About us</a></li>
+
+                                <li>
+
+                                  <% if(loggedin==true){ %>
+
+
+      <div class="dropdown">
+ <button class="dropbtn">Chào  <%= hoten %></button>
+ <div class="dropdown-content">
+ <a href="/changeprofile/<%= email %>">Thông tin cá nhân</a>
+<a href="/signedupcourses">Khóa học của tôi</a>
+ <a href="/tongquanthanhtich">Thành tích luyện tập</a>
+ <a onclick="return confirm('Bạn có muốn đăng xuất ?')" href="/logout" class="navbar-link">Đăng xuất</a>
+</div>
+</div>
+
+    <div class="mobile-dropdown">
+      <select class="" name="" onchange="location = this.value;">
+          <option value="">Chào <%= hoten %> </option>
+        <option value="/changeprofile/<%= email %>">Thông tin cá nhân</option>
+        <option value="/signedupcourses">Khóa học của tôi</option>
+        <option value="/tongquanthanhtich">Thành tích luyện tập</option>
+        <option value="/logout"> Đăng xuất</option>
+      </select>
+    </div>
+
+
+                                      <%
+                                    } else { %>
+                                      <a href="/signin"><button type="button" class="btn btn-primary" name="button">Đăng nhập/Đăng kí</button></a>
+
+
+                                      <%}%>
+
+
+                                </li>
+
+                            </ul>
+                        </nav>
+                        <div id="mobile-menu-wrap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+    <!-- Top Social Begin -->
+    <div class="top-social">
+        <div class="top-social-links">
+            <ul>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Top Social End -->
+<br><br><br><br><br><br><br><br>

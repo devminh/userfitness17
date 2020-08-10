@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div class="center">
+
+
+  <h3> Bộ môn: <%= course.subject %> </h3>
+  <p>Tên khóa học: <%= course.coursename %> </p>
+
+    <p>Coachname :   <a target="_blank" style="color:blue" href="/coachinfo/<%= course.coachemail %>"><%= course.coachname %></a> </p>
+
+
+  <textarea class="form-control"><%= course.description %></textarea>
+  <br>
+
+    <button class="btn btn-success" type="button" name="button">  <a style="color:white" href="/enrollcourse/<%= course.courseid %>">Đăng kí ngay !</a>  </button>
+<br><br>
+  <h3>Những lợi thế khi tham gia khóa học :</h3>
+    <textarea class="form-control"><%= course.advantages %></textarea>
+    <br>
+    <p>Ngày bắt đầu : <%= course.startday %></p>
+
+
+    <h3>Số buổi học : <%= course.classdays %></h3>
+
+    <h3>Thời lượng khóa học : <%= course.sothang %> tháng</h3>
+
+    <h3>Chi tiết các buổi học :</h3>
+
+    <% for(var i=0; i< buoitap.length; i++) { %>
+      <p>Buổi tập <%= i+1 %> </p>
+      <p>Thời gian : <%= buoitap[i].time %></p>
+      <p>Nội dung chính : <%= buoitap[i].noidung %> </p>
+
+
+    <%   }
+
+    %>
+
+</div>
+
+<%- include('partials/footer') %>

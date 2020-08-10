@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<br>
+<div class="center">
+
+
+<% for(var i=0; i< courselist.length; i++) { %>
+
+<h3>  <%= courselist[i].coursename %> - Bộ môn : <%= courselist[i].subject %> </h3>
+<p>Số buổi : <%= courselist[i].sobuoi %></p>
+<p> Ngày bắt đầu  <%= courselist[i].beginday %> </p>
+<textarea class="form-control" readonly><%= courselist[i].lido %> </textarea>
+
+
+<hr>
+
+<br>
+
+
+<%   }
+
+%>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<div class="center">
+  <h3> Bộ môn: <%= course[0].subject %> </h3>
+  <p>Tên khóa học: <%= course[0].coursename %> </p>
+
+  <label for="">Mô tả:</label>
+  <textarea class="form-control" readonly><%= course[0].courseinfo.description %></textarea>
+  <br>
+
+  <%
+      let sothangconlai = course[0].sothang - course[0].dongtruoc;
+  %>
+
+
+  <form class="" action="/giahantodb" method="post">
+    <input type="text" class="form-control" name="courseid" value="<%= course[0].courseid %>" style="display:none">
+
+    <input type="text" name="dongtruoc" value="<%= course[0].dongtruoc %> " style="display:none">
+
+    <input type="text" name="nextdaypayment" value="<%= course[0].ngaydongtienketiep %> " style="display:none">
+    <br><br>
+    
+      <h2>Số tháng còn lại : <%= sothangconlai %></h2>
+    <label for="">Bạn muốn gia hạn thêm mấy tháng ? </label>
+
+    <select class="" name="sothanggiahan">
+
+
+
+    <% for(var i=1 ; i <= sothangconlai ; i++) { %>
+      <option value="<%= i %>-<%= i*parseInt(course[0].courseinfo.monthlyfee) %>" > <%= i %> tháng - <%= i*parseInt(course[0].courseinfo.monthlyfee) %> VNĐ    </option>
+
+    <%   }
+
+    %>
+
+    </select>
+
+    <br>  <br>
+
+    <button type="submit" name="button" class="btn btn-success">Gia hạn</button>
+
+  </form>
+
+
+</div>
+
+<%- include('partials/footer') %>

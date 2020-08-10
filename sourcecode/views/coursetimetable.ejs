@@ -1,0 +1,79 @@
+<%- include('partials/header') %>
+
+<div class="center">
+  <% let vitritrung =""  %>
+  <% function vitritrungemail(useremail,arr)
+  {
+    for(let i=0;i<arr.length;i++){
+      if(arr[i].useremail==useremail){
+        vitritrung = i;
+      }
+
+    }
+
+
+  }
+
+     %>
+
+  <div class="three-cols">
+
+    <% for(var i=0; i< buoitap.length; i++) { %>
+      <div class="motbuoi">
+        <h3>Buổi tập <%= i+1 %> </h3>
+        <p>Thời gian : <%= buoitap[i].time %></p>
+        <p>Nội dung chính : <%= buoitap[i].noidung %> </p>
+
+        <%
+        function vitritrungemail(){
+          for(var j=0; j < buoitap[i].dstap.length; j++){
+
+            if(email === buoitap[i].dstap[j].useremail)
+            {
+
+              return j;
+
+            }
+
+
+          }
+        }
+
+
+
+        %>
+
+
+
+        <% if( vitritrungemail() < 0 || vitritrungemail() == undefined) { %>
+            <button type="button" name="button" class="btn btn-success">  <a style="color:white" href="/diemdanh/?courseid=<%= buoitap[i].courseid %>&sttbuoi=<%= buoitap[i].sttbuoi %>">Điểm danh</a></button>
+        <%}else{%>
+          <h4>Bạn đã điểm danh buổi này !</h4>
+          <br>
+          <button type="button" name="button" class="btn btn-danger">  <a style="color:white" href="/xoaluotdiemdanh/?courseid=<%= buoitap[i].courseid %>&sttbuoi=<%= buoitap[i].sttbuoi %>">Xóa lượt điểm danh</a></button>
+
+          <%}%>
+
+
+
+
+
+
+
+          <br>  <br>
+      </div>
+
+
+
+    <%   }
+
+    %>
+
+
+  </div>
+
+
+
+</div>
+
+<%- include('partials/footer') %>

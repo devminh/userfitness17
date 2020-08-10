@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+
+
+
+<style media="screen">
+  .center{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+</style>
+<br>
+
+<div class="center">
+  <form class="" action="/updateprofile" method="post">
+    <div class="form-group">
+      <label for="">Họ tên :</label>
+      <input type="text" class="form-control" name="hoten" value="<%= profile[0].hoten %>" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Ngày tháng năm sinh</label>
+      <input type="date" class="form-control" name="dob" value="<%= profile[0].namsinh %>" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Số điện thoại: </label>
+      <input type="text" class="form-control" name="tel" value="<%= profile[0].tel %>">
+    </div>
+    <div class="form-group">
+      <label for="">Email: </label>
+      <input type="text" class="form-control" name="email"  value="<%= profile[0].email %>" readonly>
+    </div>
+    <div class="form-group">
+      <label for="">Số CMND : </label>
+      <input type="text" class="form-control" name="cmnd" value="<%= profile[0].cmnd %>">
+    </div>
+
+    <hr>
+    <h3>Thông tin sức khỏe cơ bản :</h3>
+    <p>Đây là phần sẽ do Tiếp Tân hoặc Coach nhập </p>
+    <p>Thống kê dựa vào máy đo InBody</p>
+    <div class="form-group">
+      <label for="">Chiều cao (mét)</label>
+      <input type="text" class="form-control" name="height"  value="<%= profile[0].chieucao %>" readonly>
+
+    </div>
+    <div class="form-group">
+      <label for="">Cân nặng (kí)</label>
+      <input type="text" class="form-control" name="weight" value="<%= profile[0].cannang %>" readonly>
+
+    </div>
+    <div class="form-group">
+      <label for="">Số đo 3 vòng</label>
+      <input type="text" placeholder="Vòng 1:" class="form-control" name="vong1" value="<%= profile[0].vong1 %>" readonly>
+      <input type="text" placeholder="Vòng 2:" class="form-control" name="vong2" value="<%= profile[0].vong2 %>" readonly>
+      <input type="text" placeholder="Vòng 3:" class="form-control" name="vong3" value="<%= profile[0].vong3 %>" readonly>
+
+
+    </div>
+    <div class="form-group">
+      <label for="">Lượng cơ (kí)</label>
+      <input type="text" class="form-control" name="muscle" value="<%= profile[0].luongco %>" readonly>
+
+    </div>
+    <div class="form-group">
+      <label for="">Lượng mỡ (kí)</label>
+      <input type="text" class="form-control" name="fatmass" value="<%= profile[0].luongmo %>" readonly>
+
+    </div>
+
+    <button type="submit" class="btn btn-success" name="button">Đồng ý thay đổi ! </button>
+
+  </form>
+</div>
+<%- include('partials/footer') %>

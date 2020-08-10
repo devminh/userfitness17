@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<br>
+
+<div class="center">
+  <form class="" action="/signup" method="post">
+    <div class="form-group">
+      <label for="">Họ và tên : </label>
+      <input type="text" class="form-control" name="fullname" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Ngày tháng năm sinh </label>
+      <input type="date" class="form-control" name="dob" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Email:</label>
+      <input type="email" class="form-control" name="email" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Số điện thoại</label>
+      <input type="tel" class="form-control" name="tel" minlength="10" maxlength="10" placeholder="Nhập đúng 10 kí tự số" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Số CMND </label>
+      <input type="tel" class="form-control" name="cmnd" placeholder="Nhập đúng 9 hoặc 12 kí tự số" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Mật khẩu</label>
+      <input type="password" class="form-control" name="password1" required>
+
+    </div>
+    <div class="form-group">
+      <label for="">Nhập lại mật khẩu</label>
+      <input type="password" class="form-control" name="password2" required>
+
+    </div>
+    <hr>
+    <h3>Thông tin sức khỏe cơ bản :</h3>
+    <p>Thống kê dựa vào máy đo InBody</p>
+    <div class="form-group">
+      <label for="">Chiều cao (mét)</label>
+      <input type="number" class="form-control" min="0.01" max="250" step="0.01"  name="height" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Cân nặng (kí)</label>
+      <input type="number" class="form-control" min="0.01" max="400" step="0.01"  name="weight" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Số đo 3 vòng</label>
+      <input type="number" placeholder="Vòng 1:" class="form-control" min="0.01" max="200" step="0.01"  name="vong1" >
+      <input type="number" placeholder="Vòng 2:" class="form-control" min="0.01" max="200" step="0.01"  name="vong2" >
+      <input type="number" placeholder="Vòng 3:" class="form-control" min="0.01" max="200" step="0.01"  name="vong3" >
+
+
+    </div>
+    <div class="form-group">
+      <label for="">Lượng cơ (kí)</label>
+      <input type="number" class="form-control" min="0.01" max="300" step="0.01"  name="muscle" >
+
+    </div>
+    <div class="form-group">
+      <label for="">Lượng mỡ (kí)</label>
+      <input type="number" class="form-control" min="0.01" max="300" step="0.01"  name="fatmass">
+
+    </div>
+
+    <button onclick="return confirm('Bạn có muốn đăng kí tài khoản ?')" type="submit" class="btn btn-success" name="button">Đăng kí</button>
+
+  </form>
+</div>
+<%- include('partials/footer') %>

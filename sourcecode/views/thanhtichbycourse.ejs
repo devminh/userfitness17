@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<div class="center">
+  <table style="width:100%">
+      <tr>
+        <th>Buổi</th>
+        <th>Chỉ số calo</th>
+        <th>Chỉ số cơ ngực</th>
+        <th>Chỉ số dẻo dai</th>
+        <th>Chỉ số cơ bụng</th>
+        <th>Chỉ số cơ chân</th>
+        <th>Chỉ số cơ vai</th>
+      </tr>
+  <% for(var i=0; i< thanhtich.length; i++) { %>
+
+      <tr>
+        <td><%= thanhtich[i].sttbuoi +1  %></td>
+        <td><%= thanhtich[i].calo %></td>
+        <td><%= thanhtich[i].conguc %></td>
+        <td><%= thanhtich[i].deodai %></td>
+        <td><%= thanhtich[i].cobung %></td>
+        <td><%= thanhtich[i].cochan %></td>
+        <td><%= thanhtich[i].covai %></td>
+
+
+      </tr>
+
+
+
+
+
+
+    <%   }
+
+    %>
+
+    </table>
+</div>
+<%- include('partials/footer') %>

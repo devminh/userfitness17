@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+  <div class="center">
+
+    <h3>Tên khóa học: <%= course.coursename %> </h3>
+    <p> Bộ môn: <%= course.subject %> </p>
+    <p>Coach name : <%= course.coachname %></p>
+    <h3>Số buổi học : <%= course.classdays %></h3>
+
+    <h3>Thời lượng khóa học : <%= course.sothang %> tháng</h3>
+    <br>
+    <form class="" action="/enrollcoursetodb" method="post">
+      <input type="text" class="form-control" name="courseid" value="<%= course.courseid %>" style="display:none">
+        <input type="text" class="form-control" name="coursename" value="<%= course.coursename %>" style="display:none">
+      <input type="text" name="sothang" value="<%= course.sothang %> " style="display:none">
+      <input type="text" name="startday" value="<%= course.startday %> " style="display:none">
+
+      <label for="">Trả trước :</label>
+      <select class="" name="feechoices">
+          <option value="motthang-<%= course.monthlyfee %>"> 1 tháng <%= course.monthlyfee %> VNĐ</option>
+          <option value="cakhoa-<%= course.fullfee %>"> Cả khóa <%= course.fullfee %> VNĐ</option>
+      </select>
+      <p>Để test chức năng gia hạn, 1 tháng sẽ được đổi thành giờ hiện tại + thêm 5 phút</p>
+      <br><br>
+
+
+
+
+      <input type="checkbox" id="dieukhoan" name="dieukhoan" value="dieukhoan" required>
+        <label for="dieukhoan"> Đồng ý <a style="color:blue" href="https://docs.google.com/document/d/1fI-5oBenFJ9TV7gOjggypwpE70U9binojsT6gZ59CJk/edit?usp=sharing" target="_blank">điều khoản</a> của Fitness17 </label>
+
+        <br><br>
+
+      <button onclick="return confirm('Bạn có muốn đăng kí khóa học này  ?')" type="submit" class="btn btn-success" name="button">Xác nhận đăng kí  </button>
+
+    </form>
+
+  </div>
+
+
+  <%- include('partials/footer') %>

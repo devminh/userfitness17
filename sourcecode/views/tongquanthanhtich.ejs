@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<style media="screen">
+  .onebuoi{
+    border:1px solid grey;
+    padding:3%;
+  }
+</style>
+  <div class="center">
+    <h4>Danh sách các buổi tập + chỉ số sức khỏe của các khóa học gần nhất</h4>
+    <br><br>
+    <div class="two-cols">
+      <% for(var i=0; i< thanhtich.length; i++) { %>
+        <div class="onebuoi">
+          <h5>Bạn đã hoàn thành buổi <%= thanhtich[i].sttbuoi +1  %> của khóa học <%= thanhtich[i].coursename  %> </h5>
+          <br>
+          <h5>Các chỉ số:</h5>
+          <p>Calo <%= thanhtich[i].calo  %> | Cơ ngục <%= thanhtich[i].conguc  %> | Dẻo dai <%= thanhtich[i].deodai  %> </p>
+          <p>Cơ bụng <%= thanhtich[i].cobung  %> | Cơ chân <%= thanhtich[i].cochan  %> | Cơ vai <%= thanhtich[i].covai  %>  </p>
+        </div>
+
+
+
+
+
+        <%   }
+
+        %>
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+<%- include('partials/footer') %>

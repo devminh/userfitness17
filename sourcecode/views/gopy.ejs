@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+<div class="center">
+
+  <h3>Tên khóa học: <%= course[0].coursename %> </h3>
+
+
+  <form class="" action="/gopytodb" method="post">
+    <label for="">Góp ý :</label>
+    <textarea name="comment" class="form-control" style="height:350px" required></textarea>
+    <input type="text" class="form-control" name="courseid" value="<%= course[0].courseid %>" style="display:none">
+    <input type="text" class="form-control" name="coursename" value="<%= course[0].coursename %>" style="display:none">
+<br><br>
+    <button type="submit" class="btn btn-success" name="button">Gửi</button>
+
+  </form>
+
+</div>
+
+<%- include('partials/footer') %>

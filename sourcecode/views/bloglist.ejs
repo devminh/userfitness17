@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+
+    <div class="center">
+
+
+<% for(var i=0; i< result.length; i++) { %>
+
+  <a style="color:blue" href="/showblog/<%= result[i]._id %>"> <%= result[i].title %>  </a>
+  <p> <%= result[i].intro %> </p>
+  <p> <%= result[i].date %> </p>
+  <br>
+
+
+<%   }
+
+%>
+  </div>
+
+
+    <%- include('partials/footer') %>

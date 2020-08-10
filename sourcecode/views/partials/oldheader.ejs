@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitness17</title>
+    <link rel="stylesheet" href="../style/main_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+
+
+
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+
+          <% if(loggedin==true){ %>
+              <li><a href="/signedupcourses">Khóa học đã đăng kí </a></li>
+              <%
+            }
+
+               %>
+                 <li><a href="/bloglist">Blogs</a></li>
+                <li><a href="/showcourses">Khóa học</a></li>
+                
+
+
+        </ul>
+         <p class="navbar-text navbar-right">
+             <% if(loggedin==true){ %>
+
+         <a href="/changeprofile/<%= email %>  "><%= hoten %>  </a> |
+         <a href="/logout" class="navbar-link">Đăng xuất</a>
+
+              <% } else{ %>
+            <a href="/signin" class="navbar-link">Đăng nhập /</a>
+            <a href="/signup" class="navbar-link">Đăng kí</a>
+            <a class="navbar-link">.</a>
+             <% } %>
+
+            </p>
+
+
+    </div>
+</nav>

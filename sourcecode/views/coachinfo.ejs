@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+  <div class="center">
+    <div class="form-group">
+      <img class="avatarimg" src="<%= profile[0].avatarsrc %>" alt="" style="width:70px;height:70px" >
+      <br><br>
+
+        <label for="">Họ tên :</label>
+
+        <input type="text" class="form-control" name="hoten" value="<%= profile[0].hoten %>"  readonly>
+
+      </div>
+      <div class="form-group">
+        <label for="">Ngày tháng năm sinh</label>
+        <input type="date" class="form-control" name="dob" value="<%= profile[0].namsinh %>" readonly>
+
+      </div>
+      <div class="form-group">
+        <label for="">Số điện thoại: </label>
+        <input type="text" class="form-control" name="tel" value="<%= profile[0].tel %>" readonly>
+      </div>
+      <div class="form-group">
+        <label for="">Email: </label>
+        <input type="text" class="form-control" name="email"  value="<%= profile[0].email %>" readonly>
+      </div>
+      <div class="form-group">
+        <label for="">Số CMND : </label>
+        <input type="text" class="form-control" name="cmnd" value="<%= profile[0].cmnd %>" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="">Bằng cấp và chứng chỉ : </label>
+        <textarea name="bangcap" class="form-control" style="height:500px" readonly><%= profile[0].bangcap %></textarea>
+      </div>
+
+  </div>
+
+  <%- include('partials/footer') %>
