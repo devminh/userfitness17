@@ -1,5 +1,0 @@
-GetJSON:
-https://www.googleapis.com/youtube/v3/search?part=snippet&q=lovemeharder&type=video&key=AIzaSyD_Je9CM7Js22DQfHZMNdfpwFM2E8W57PQ
-
-Youtubelink:
-https://www.youtube.com/watch?v= <videoid>
